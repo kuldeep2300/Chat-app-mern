@@ -1,0 +1,25 @@
+{
+  "name": "chat-app-in-4-hours",
+  "module": "index.js",
+  "type": "commanjs",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "nodemon": "^3.1.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.2",
+    "socket.io": "^4.8.0"
+  }
+}
