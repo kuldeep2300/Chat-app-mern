@@ -143,7 +143,7 @@ This document provides a step-by-step guide to setting up the backend for the Ch
 
    - Inside the services folder we have to create a file which is handle different services, like in our project we are creating `generateToken.js` file inside this file we are creating a function for generating token, using JWT, after generating token we are sending this token to the client side using cookie, and we have to export this function in our controllers inside the auth.js file.
 
-## FRONTEND SETUP
+# FRONTEND SETUP
 
 1. **Main Frontend Technologies**
 
