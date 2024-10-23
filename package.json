@@ -1,7 +1,7 @@
 {
   "name": "chat-app-in-4-hours",
   "module": "index.js",
-  "type": "commanjs",
+  "type": "commonjs",
   "devDependencies": {
     "@types/bun": "latest",
     "nodemon": "^3.1.7"
