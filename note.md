@@ -1,5 +1,9 @@
 # Backend Setup Instructions
 
+- In this project first we have complete our backend setup in which first we authenticate the user, then create the user , message, coversation model, then we create auth, user, message routes, and for handling these routes we created auth, user, message controller, after controller we created services and middleware for authentication and authorization.
+
+- After backend we completed the setup of the frontend we created pages login, signup and home, then we created component like sidebar, messages and after setting both pages and components we started routing by installing react-router-dom package in our project.  
+
 ## Things we have used in this project
 
 1.  **Main Backend Technologies**
@@ -202,3 +206,4 @@ plugins: [require("daisyui")],
 - Inside the src folder we have to create now 2 folder first one is components and second one is pages.
 
 - Inside the pages I have created 3 folder is home, login, and signup, till now.
+

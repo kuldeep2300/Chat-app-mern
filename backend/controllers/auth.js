@@ -1,19 +1,24 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
-const generateTokenAndSetCookie = require("../services/generateToken");
+const { generateTokenAndSetCookie } = require("../services/generateToken");
 
 const handleSignup = async (req, res) => {
   try {
-    const { fullName, username, password, confirmPassword, gender } = req.body;
+    const { fullName, email, password, confirmPassword, gender } = req.body;
+
+      // Validate required fields
+      if (!fullName || !email || !password || !confirmPassword) {
+        return res.status(400).json({ error: "All fields are required" });
+      }
 
     if (password !== confirmPassword) {
       return res.status(400).json({ error: "Password don't match" });
     }
 
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
     if (user) {
       return res.status(400).json({
-        error: "Username already exists",
+        error: "Email already exists",
       });
     }
 
@@ -22,43 +27,41 @@ const handleSignup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // https://avatar-placeholder.iran.liara.run/
-    const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-    const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    const boyProfilePic = `https://avatar.iran.liara.run/public/boy?fullName=${fullName}`;
+    const girlProfilePic = `https://avatar.iran.liara.run/public/girl?fullName=${fullName}`;
 
     const newUser = await User.create({
       fullName,
-      username,
+      email,
       password: hashedPassword,
       gender,
       profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
     });
 
     if (newUser) {
-      // Generate JWT Token here
-      generateTokenAndSetCookie(newUser._id, res);
-
-      res.status(201).json({
+      return res.status(201).json({
         _id: newUser._id,
         fullName: newUser.fullName,
-        username: newUser.username,
+        email: newUser.email,
         profilePic: newUser.profilePic,
       });
-    } 
-    else {
-      res.status(500).json({
+
+    } else {
+      return res.status(500).json({
         error: "Invalid user data",
       });
     }
   } catch (error) {
     console.log("Error in handleSignup controller:", error.message);
-    res.status(500).json({error: "Internal Server Error",});
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
 const handleLogin = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
     const isPasswordValid = await bcrypt.compare(
       password,
       user?.password || ""
@@ -66,32 +69,41 @@ const handleLogin = async (req, res) => {
 
     if (!user || !isPasswordValid) {
       // If user is not found or isPasswordValid is valid or not then we show this message
-      res.status(400).json({
+      return res.status(400).json({
         error: "Invalid username or password",
       });
     }
 
-    generateTokenAndSetCookie(user._id, res); // If user is found and password is valid then we generate the token,
+    const token = generateTokenAndSetCookie(user); // If user is found and password is valid then we generate the token,
+    // console.log('Token generated successfully');
+    // We have write 3rd argument to make this bit secure.
 
-    res.status(200).json({
+    res.cookie("jwt", token, {
+      maxAge: 15 * 24 * 60 * 60 * 1000, // Here 15 days is the expiry we have to write in miliseconds.
+      httpOnly: true, // prevents XSS attacks cross-site scripting attacks
+      sameSite: "strict", // CSRF attacks cross-site request forgery attack
+      secure: false, 
+      sameSit: 'none' , // Allow cross-site cookie sharing
+      domain: 'localhost', // Allow cross-site cookie sharing
+    });
+
+    return res.status(200).json({
       _id: user._id,
       fullName: user.fullName,
-      username: user.username,
+      email: user.email,
       profilePic: user.profilePic,
     });
-  }
-   catch (error) {
+  } catch (error) {
     console.log("Error in handleLogin controller:", error.message);
-    res.status(500).json({error: "Internal Server Error",});
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
 const handleLogout = (req, res) => {
   try {
-    res.cookie("jwt", "", { maxAge: 0 });
-    res.status(200).json({ message: "Logged out successfully" });
-  } 
-  catch (error) {
+    res.clearCookie("jwt"); // Clear the cookie by name
+    return res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
     console.log("Error in handleLogout controller:", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
