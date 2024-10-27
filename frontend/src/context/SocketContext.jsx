@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useEffect, useState } from "react";
 import io from "socket.io-client";
 import { useAuthContext } from "./AuthContext";
@@ -5,6 +6,7 @@ import { useAuthContext } from "./AuthContext";
 // First creating the context of socket.
 export const SocketContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useSocketContext = () => {
   return useContext(SocketContext);
 };
@@ -47,3 +49,7 @@ export const SocketContextProvider = ({ children }) => {
     </SocketContext.Provider>
   );
 };
+
+// Why we don't pass the socket in useEffect array dependencies : In your code, the useEffect dependency array includes only authUser because that’s the only variable your useEffect needs to observe to correctly manage the socket connection. Including socket as a dependency causes issues because it creates a circular dependency loop: the useEffect updates socket, which then re-triggers useEffect, leading to unintended behavior and errors. Here’s why this happens: 
+// authUser dependency: When authUser changes (i.e., when the user logs in or out), the useEffect runs to either create a new socket connection or close the existing one, which is the intended functionality. 
+// Adding socket to dependencies: Adding socket would cause useEffect to re-run every time socket changes (e.g., every time it’s set or closed). This causes an infinite loop because: The setSocket(socket) line changes socket, which re-triggers useEffect, leading to more calls to setSocket, which restarts the process indefinitely. 

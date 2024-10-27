@@ -39,7 +39,6 @@ export const useSignup = () => {
       // setAuthUser(data);
       toast.success("Signup Successfully"); // Display success toast message
       navigate('/login');
-
       
     } catch (error) {
       toast.error(error.message);

@@ -93,7 +93,12 @@ input:-webkit-autofill {
   display: block;
 }
 
-/* For smaller screen it will show sidebar and hide message container */
+/* Media Queries => For smaller screen it will show sidebar and hide message container */
+
+/* Base Styles */
+.home-container {
+  
+}
 
 @media (width <= 768px) {
   .Home-part-2 {
