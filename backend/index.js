@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: "https://localhost:5173", // Replace with your frontend URL
     credentials: true, // Enable sending cookies in cross-origin requests, / Allows cookies to be sent and received
   })
 ); // To allow cross-origin requests
@@ -43,5 +43,5 @@ app.get("*", (req, res) => {
 
 server.listen(PORT, () => {
   connectToMongoDB(process.env.MONGO_DB_URL); // To connect to MongoDB database
-  console.log(`Server started: http://localhost:${PORT}`);
+  console.log(`Server started: https://localhost:${PORT}`);
 });
