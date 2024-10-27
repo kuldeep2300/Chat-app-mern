@@ -81,10 +81,8 @@ const handleLogin = async (req, res) => {
     res.cookie("jwt", token, {
       maxAge: 15 * 24 * 60 * 60 * 1000, // Here 15 days is the expiry we have to write in miliseconds.
       httpOnly: true, // prevents XSS attacks cross-site scripting attacks
-      sameSite: "strict", // CSRF attacks cross-site request forgery attack
-      secure: false, 
-      sameSit: 'none' , // Allow cross-site cookie sharing
-      domain: 'localhost', // Allow cross-site cookie sharing
+      sameSite: "none", // CSRF attacks cross-site request forgery attack
+      secure: "true", 
     });
 
     return res.status(200).json({
