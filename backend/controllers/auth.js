@@ -84,7 +84,7 @@ const handleLogin = async (req, res) => {
       // sameSite: "strict", // CSRF attacks cross-site request forgery attack
       secure: true, 
       sameSit: 'none' , // Allow cross-site cookie sharing
-      domain: 'https://chat-app-eobh.onrender.com', // Allow cross-site cookie sharing
+      domain: 'chat-app-eobh.onrender.com', // Allow cross-site cookie sharing
     });
 
     return res.status(200).json({
