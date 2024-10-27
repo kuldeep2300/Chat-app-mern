@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://localhost:5173", // Replace with your frontend URL
+    origin: "https://chat-app-eobh.onrender.com/", // Replace with your frontend URL
     credentials: true, // Enable sending cookies in cross-origin requests, / Allows cookies to be sent and received
   })
 ); // To allow cross-origin requests
