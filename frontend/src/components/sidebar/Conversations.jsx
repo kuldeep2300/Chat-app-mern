@@ -4,7 +4,7 @@ import { Conversation } from "./Conversation";
 
 export const Conversations = ({ conversationRefs }) => {
   const { loading, conversations } = useGetConversations();
-  console.log("Conversations:", conversations);
+  // console.log("Conversations:", conversations);
   return (
     <div className="py-2 pb-5 flex flex-col overflow-auto">
       {conversations.map((conversation, index) => (

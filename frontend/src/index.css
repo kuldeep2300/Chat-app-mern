@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+
+* {
   scrollbar-color: auto !important; /* Resets to the default browser behavior */
   scrollbar-width: auto !important; /* Resets scrollbar width to normal */
   scrollbar-height: auto !important; /* Resets scrollbar height to normal */
+}
+
+html {
+ font-family: "Jost";
 }
 
 body {
@@ -19,16 +26,23 @@ body {
 .message-navbar {
   /* background-color: #2c2c2c; */
   background-color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-/* .message-container {
-  background-image: url('/wallpaper.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-} */
+input[type="password"] {
+  font-size: 24px; /* Adjust the size as needed */
+  /* letter-spacing: 2px; Optional: Adds spacing between dots */
+  padding: 8px; /* Optional: Adds padding for a more spacious input */
+}
+
+/* Target the placeholder text */
+input[type="password"]::placeholder {
+  font-size: 16px; /* Smaller size for placeholder */
+  line-height: 24px;
+  opacity: 0.7;
+}
 
 .message-container {
   /* Background Image Styles */
@@ -43,11 +57,9 @@ body {
   font-size: 14px; /* Adjust this value to reduce font size */
 }
 
-
-
 /* dark mode looking scrollbar */
 ::-webkit-scrollbar {
-  width: 5px; 
+  width: 5px;
 }
 
 /* ::-webkit-scrollbar-track {
@@ -76,32 +88,30 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   padding: 3rem;
-  
 }
 
-input:-webkit-autofill { 
+input:-webkit-autofill {
   caret-color: black;
 }
 
 /* Applying box shadow to message input only */
 .message-input {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
 }
 
-/* For larger screen it will show both sidebar and messsage container */
-.Home-part-2 {
-  display: block;
+
+/*! Media Queries  */
+@media (width <= 768px ) {
+
 }
 
-/* Media Queries => For smaller screen it will show sidebar and hide message container */
-
-/* Base Styles */
-.home-container {
+@media (width <= 560px ) {
+  .hidden-sidebar {
+    display: none;
+  } 
   
-}
-
-@media (width <= 768px) {
-  .Home-part-2 {
+.no-chat-section {
     display: none;
   }
 }

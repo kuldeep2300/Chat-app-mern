@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { GenderCheckBox } from "./Gender";
 import { useState } from "react";
 import { useSignup } from "../../hooks/useSignup";
+import logo from '../../assets/logo.svg';
+
 
 /* eslint-disable react/no-unknown-property */
 export const Signup = () => {
@@ -30,9 +32,10 @@ export const Signup = () => {
   return (
     <div className="p-4 flex flex-col items-center justify-center w-full mx-auto max-w-md transition-all duration-75">
       <div className="w-full p-4 rounded-lg shadow-md bg-white ">
-        <h1 className="text-3xl font-semibold text-center text-black mb-2">
-          Signup
-        </h1>
+      <div className="brand flex flex-raw justify-center items-center gap-3">
+                <img src={logo} alt="logo-png" className="h-12" />
+                <h1 className="text-3xl font-semibold text-center text-black">SNAPPY</h1>
+      </div>
 
         <form onSubmit={handleFormSubmit}>
           <div className="flex flex-col gap-1 mb-2">
@@ -78,7 +81,7 @@ export const Signup = () => {
             </label>
             <input
               type="password"
-              className="w-full h-12 bg-slate-100 px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-primary focus:bg-blue-100 rounded-md shadow-sm transition-all duration-300 ease-in-out"
+              className="w-full h-12  bg-slate-100 px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-primary focus:bg-blue-100 rounded-md shadow-sm transition-all duration-300 ease-in-out"
               id="password"
               placeholder="Enter password"
               value={inputs.password}

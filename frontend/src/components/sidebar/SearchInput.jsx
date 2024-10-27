@@ -40,14 +40,14 @@ export const SearchInput = ({ conversationRefs }) => {
 
   return (
     <form
-      className="flex pt-0 px-1 items-center gap-2"
+      className="flex pt-0 px-3 items-center gap-1"
       onSubmit={handleFormSubmit}
     >
       <input
         type="text"
         id="search"
         placeholder="Search..."
-        className="input input-bordered rounded-full text-white"
+        className="input input-bordered rounded-full text-white input-size"
         autoComplete="off"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

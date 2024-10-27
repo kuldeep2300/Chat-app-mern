@@ -1,11 +1,11 @@
-import { MessageContainer } from "../../components/messages/MessageContainer"
-import { Sidebar } from "../../components/sidebar/Sidebar"
+import { MessageContainer } from "../../components/messages/MessageContainer";
+import { Sidebar } from "../../components/sidebar/Sidebar";
 
 export const Home = () => {
   return (
-    <div className=" w-full flex h-screen bg-white">
+    <div className="w-full flex h-screen bg-white ">
       <Sidebar />
-      <MessageContainer className="Home-part-2" />
+      <MessageContainer />
     </div>
-  )
-}
+  );
+};

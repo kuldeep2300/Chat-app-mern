@@ -14,13 +14,13 @@ export const MessageInput = () => {
     setMessage("");
   };
   return (
-    <form className="w-full px-4 message-input" onSubmit={handleFormSubmit}>
-      <div className="w-full relative">
+    <form className="w-full" onSubmit={handleFormSubmit}>
+      <div className="w-full relative message-input">
         <input
           type="text"
           id="message"
           autoFocus
-          className=" text-lg block w-full p-2.5 pb-5 outline-none bg-white boder-gray-600 text-black pt-3"
+          className=" text-lg block w-full p-2 pb-5 outline-none bg-white boder-gray-600 text-black pt-3 "
           placeholder="Send a message" 
           autoComplete="off"
           value={message}

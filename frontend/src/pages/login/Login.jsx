@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
+import logo from '../../assets/logo.svg';
 
 /* eslint-disable react/no-unknown-property */
 export const Login = () => {
@@ -17,8 +18,10 @@ export const Login = () => {
   return (
     <div className="p-4 flex flex-col items-center justify-center w-full mx-auto max-w-md transition-all duration-75">
       <div className="w-full p-6 rounded-lg shadow-md bg-white ">
-        <h1 className="text-3xl font-semibold text-center text-black">Login</h1>
-
+      <div className="brand flex flex-raw justify-center items-center gap-3">
+                <img src={logo} alt="logo-png" className="h-12" />
+                <h1 className="text-3xl font-semibold text-center text-black">SNAPPY</h1>
+      </div>
         <form onSubmit={handleFormSubmit}>
           <div className="flex flex-col gap-2 mb-4">
             <label htmlFor="email" className="label py-1">
