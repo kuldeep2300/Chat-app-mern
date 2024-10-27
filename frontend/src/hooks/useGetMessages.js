@@ -11,7 +11,8 @@ export const useGetMessages = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://localhost:5000/api/messages/${selectedConversation._id}`,
+          // Development Level :  `http://localhost:5000/api/messages/${selectedConversation._id}`,
+          `https://chat-app-eobh.onrender.com/api/messages/${selectedConversation._id}`,
           {
             method: "GET",
             credentials: "include",
