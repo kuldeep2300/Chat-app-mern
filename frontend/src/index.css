@@ -19,12 +19,6 @@ body {
   background: url("/bg.webp") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.full-container {
-  height: 100vh; /* Use this for mobile-specific styling */
 }
 
 .message-navbar {
