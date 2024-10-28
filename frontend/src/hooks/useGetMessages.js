@@ -12,7 +12,7 @@ export const useGetMessages = () => {
       try {
         const res = await fetch(
           // Development Level :  `http://localhost:5000/api/messages/${selectedConversation._id}`,
-          `/api/messages/${selectedConversation._id}`,
+          `https://chat-app-mern-dh70.onrender.com/api/messages/${selectedConversation._id}`,
           {
             method: "GET",
             credentials: "include",

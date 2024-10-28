@@ -10,7 +10,7 @@ export const useGetConversations = () => {
       setLoading(true);
       try {
         // Development Level :  const res = await fetch("http://localhost:5000/api/users", {
-        const res = await fetch("/api/users", {
+        const res = await fetch("https://chat-app-mern-dh70.onrender.com/api/users", {
           method: "GET",
           credentials: "include", // Include credentials (cookie) in the request
         });
