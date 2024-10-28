@@ -19,7 +19,7 @@ export const MessageContainer = () => {
   };  
 
   return (
-    <div className={` flex flex-col duration-1000 transition-all`} >
+    <div className={` flex h-screen flex-col duration-1000 transition-all`} >
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
