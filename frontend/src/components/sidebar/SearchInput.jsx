@@ -40,7 +40,7 @@ export const SearchInput = ({ conversationRefs }) => {
 
   return (
     <form
-      className="flex pt-0 px-3 items-center gap-1"
+      className="flex items-center gap-1 justify-evenly"
       onSubmit={handleFormSubmit}
     >
       <input

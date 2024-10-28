@@ -14,8 +14,8 @@ export const MessageInput = () => {
     setMessage("");
   };
   return (
-    <form className="w-full" onSubmit={handleFormSubmit}>
-      <div className="w-full relative message-input">
+    <form className="w-full p-2" onSubmit={handleFormSubmit}>
+      <div className="w-full relative pl-1">
         <input
           type="text"
           id="message"
