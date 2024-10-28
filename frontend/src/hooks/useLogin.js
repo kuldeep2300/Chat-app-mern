@@ -16,7 +16,7 @@ export const useLogin = () => {
       console.log("inside login sending request to the server..");
       // Development level : const res = await fetch("http://localhost:5000/api/auth/login", {
       const res = await fetch(
-        "https://chat-app-eobh.onrender.com/api/auth/login",
+        "/api/auth/login",
         {
           method: "POST",
           credentials: "include", // Ensures cookies are sent

@@ -13,7 +13,7 @@ export const useLogout = () => {
 
     try {
       // Development Level : const res = await fetch("http://localhost:5000/api/auth/logout", {
-      const res = await fetch("https://chat-app-eobh.onrender.com/api/auth/logout", {
+      const res = await fetch("/api/auth/logout", {
         method: "GET", // Ensure this matches the method used in your route
         credentials: "include" // Include credentials to send cookies
       })

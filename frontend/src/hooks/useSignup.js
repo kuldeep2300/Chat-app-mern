@@ -17,7 +17,7 @@ export const useSignup = () => {
 
     try {
       // Development level : const res = await fetch("http://localhost:5000/api/auth/signup", {
-      const res = await fetch("https://chat-app-eobh.onrender.com/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST", // POST request - Here we are first set same proxy in the vite.config.js file so the cors (cross-origin resource sharing) error will not occur, then this method send the post request to the server and we are parsing the data from javascript object to JSON object string and after that server return res.json() data in server side res.json() data is json string so we have to convert into javascript object that's why in frontend we use res.json() to parse the data from JSON string to javascript object.
         headers: { "Content-Type": "application/json" }, // this telling the server that we are sending JSON data
         body: JSON.stringify({

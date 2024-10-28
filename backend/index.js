@@ -22,7 +22,8 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://chat-app-eobh.onrender.com/", // Replace with your frontend URL
+    origin: "https://chat-app-mern-dh70.onrender.com", // Replace with your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"], // Specify the allowed HTTP methods
     credentials: true, // Enable sending cookies in cross-origin requests, / Allows cookies to be sent and received
   })
 ); // To allow cross-origin requests
