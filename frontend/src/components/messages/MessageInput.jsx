@@ -20,7 +20,7 @@ export const MessageInput = () => {
           type="text"
           id="message"
           autoFocus
-          className=" text-lg block w-full p-2 pb-5 outline-none bg-white boder-gray-600 text-black pt-3 fixed"
+          className=" text-lg block w-full p-2 pb-5 outline-none bg-white boder-gray-600 text-black pt-3"
           placeholder="Send a message" 
           autoComplete="off"
           value={message}
