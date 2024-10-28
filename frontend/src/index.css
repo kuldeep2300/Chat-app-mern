@@ -11,9 +11,6 @@
   scrollbar-height: auto !important; /* Resets scrollbar height to normal */
 }
 
-html {
- font-family: "Jost";
-}
 
 body {
   background: url("/bg.webp");
@@ -31,18 +28,6 @@ body {
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-input[type="password"] {
-  font-size: 24px; /* Adjust the size as needed */
-  /* letter-spacing: 2px; Optional: Adds spacing between dots */
-  padding: 8px; /* Optional: Adds padding for a more spacious input */
-}
-
-/* Target the placeholder text */
-input[type="password"]::placeholder {
-  font-size: 16px; /* Smaller size for placeholder */
-  line-height: 24px;
-  opacity: 0.7;
-}
 
 .message-container {
   /* Background Image Styles */

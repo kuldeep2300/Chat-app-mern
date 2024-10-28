@@ -16,7 +16,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="p-4 flex flex-col items-center justify-center w-full mx-auto max-w-md transition-all duration-75">
+    <div className="h-screen p-4 flex flex-col items-center justify-center w-full mx-auto max-w-md transition-all duration-75">
       <div className="w-full p-6 rounded-lg shadow-md bg-white ">
       <div className="brand flex flex-raw justify-center items-center gap-3">
                 <img src={logo} alt="logo-png" className="h-12" />

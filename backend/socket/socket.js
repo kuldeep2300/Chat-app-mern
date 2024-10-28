@@ -10,7 +10,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   // by doing this first we have express server in which only client request to the server and server respond to the client and req-res cycle end, but here this line make socket server and wrap inside the express server, and now the server is from socket.io which help us to send req to the server and here server can also send req to the client, enable two way or duplex communication service.
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: ["https://chat-app-eobh.onrender.com/"],
     methods: ["GET", "POST"],
   },
 });
