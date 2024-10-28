@@ -88,7 +88,6 @@ const handleLogin = async (req, res) => {
       domain: 'chat-app-eobh.onrender.com', // Allow cross-site cookie sharing
     });
 
-    // Send token in response for mobile usage
     return res.status(200).json({
       _id: user._id,
       fullName: user.fullName,
