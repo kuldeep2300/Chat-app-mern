@@ -47,7 +47,7 @@ export const SearchInput = ({ conversationRefs }) => {
         type="text"
         id="search"
         placeholder="Search..."
-        className="input input-bordered rounded-full text-white input-size"
+        className="input input-bordered rounded-full text-black input-size bg-slate-200"
         autoComplete="off"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
