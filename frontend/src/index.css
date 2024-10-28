@@ -9,6 +9,9 @@
   scrollbar-color: auto !important; /* Resets to the default browser behavior */
   scrollbar-width: auto !important; /* Resets scrollbar width to normal */
   scrollbar-height: auto !important; /* Resets scrollbar height to normal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
