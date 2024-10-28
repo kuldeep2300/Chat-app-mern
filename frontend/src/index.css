@@ -36,7 +36,7 @@ body {
   /* background-size: cover; Ensures the image covers the entire area */
   /* Container Dimensions (Optional) */
   height: 100vh; /* Makes the container at least the full height of the viewport */
-  width: 100%; /* Full width of the parent element */
+  width: 100vw; /* Full width of the parent element */
   background-color: #f8faff;
   /* Font Size Adjustment */
   font-size: 14px; /* Adjust this value to reduce font size */
