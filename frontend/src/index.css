@@ -24,7 +24,7 @@ body {
 }
 
 .full-container {
-  height: 100svh; /* Use this for mobile-specific styling */
+  max-height: 100vh; /* Use this for mobile-specific styling */
 }
 
 .message-navbar {
