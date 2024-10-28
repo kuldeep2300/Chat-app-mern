@@ -6,7 +6,7 @@ const handleSignup = async (req, res) => {
   try {
     const { fullName, email, password, confirmPassword, gender } = req.body;
 
-      // Validate required fields
+      // Validate required 
       if (!fullName || !email || !password || !confirmPassword) {
         return res.status(400).json({ error: "All fields are required" });
       }
@@ -78,15 +78,17 @@ const handleLogin = async (req, res) => {
     // console.log('Token generated successfully');
     // We have write 3rd argument to make this bit secure.
 
+    // Cookie for browser usage
     res.cookie("jwt", token, {
       maxAge: 15 * 24 * 60 * 60 * 1000, // Here 15 days is the expiry we have to write in miliseconds.
       httpOnly: true, // prevents XSS attacks cross-site scripting attacks
       // sameSite: "strict", // CSRF attacks cross-site request forgery attack
       secure: true, 
-      sameSit: 'none' , // Allow cross-site cookie sharing
+      sameSite: 'none' , // Allow cross-site cookie sharing
       domain: 'chat-app-eobh.onrender.com', // Allow cross-site cookie sharing
     });
 
+    // Send token in response for mobile usage
     return res.status(200).json({
       _id: user._id,
       fullName: user.fullName,

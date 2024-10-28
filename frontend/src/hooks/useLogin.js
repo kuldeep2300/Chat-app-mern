@@ -13,26 +13,33 @@ export const useLogin = () => {
     setLoading(true);
 
     try {
-      console.log('inside login sending request to the server..');
+      console.log("inside login sending request to the server..");
       // Development level : const res = await fetch("http://localhost:5000/api/auth/login", {
-      const res = await fetch("https://chat-app-eobh.onrender.com/api/auth/login", {
-        method: "POST",
-        credentials: 'include', // Ensures cookies are sent
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      const res = await fetch(
+        "https://chat-app-eobh.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          credentials: "include", // Ensures cookies are sent
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
       const data = await res.json();
-      console.log('Login sever data: ', data);
+      console.log("Login sever data: ", data);
       if (data.error) {
         throw new Error(data.error);
       }
 
-      // Localstorage store the user
+      // Localstorage store the user and the token
       localStorage.setItem("chat-user", JSON.stringify(data));
+      localStorage.setItem("token", data.token); // Store the token in local storage
+
       // Context for authentication
       setAuthUser(data);
       toast.success("Login Successfully");

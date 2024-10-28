@@ -8,7 +8,7 @@ export const useSendMessage = () => {
   const [loading, setLoading] = useState(false);
   const { messages, setMessages, selectedConversation } = useConversation();
 
-  const audio = new Audio(SendMessage); 
+  const audio = new Audio(SendMessage);
 
   const sendMesssage = async (message) => {
     setLoading(true);
@@ -20,13 +20,15 @@ export const useSendMessage = () => {
         {
           method: "POST",
           credentials: "include",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             message,
           }),
         }
-      );     
-      
+      );
+
       const data = await res.json();
 
       console.log(data);
