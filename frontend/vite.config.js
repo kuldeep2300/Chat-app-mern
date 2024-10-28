@@ -8,8 +8,6 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://chat-app-mern-dh70.onrender.com",
-        changeOrigin: true,
-        secure: true,
       },
     },
   }
