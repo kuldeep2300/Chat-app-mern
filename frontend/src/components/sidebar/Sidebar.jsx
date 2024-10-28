@@ -11,7 +11,7 @@
 
     return (
       <div
-        className={`relative max-h-screen sm:w-[50vw] md:w-[35vw] lg:w-[30vw] xl:w-[20vw] w-full bg-white  border-r border-slate-500 pt-2 pl-3 flex flex-col duration-1000 transition-all  ${
+        className={`relative min-h-[95vw] sm:w-[50vw] md:w-[35vw] lg:w-[30vw] xl:w-[20vw] w-full bg-white  border-r border-slate-500 pt-2 pl-3 flex flex-col duration-1000 transition-all  ${
           selectedConversation ? "hidden-sidebar" : "w-40%"
         }
         `
