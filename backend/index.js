@@ -14,7 +14,7 @@ const userRoute = require("./routes/user");
 const protectRoute = require("./middlewares/protectRoute.js");
 const { app, server } = require("./socket/socket.js");
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 // const __dirname = path.resolve(); // Make sure this line is declared correctly
 
 app.use(express.json()); // To parse the incoming requests with JSON paylaods (from req. body)
@@ -42,7 +42,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
 });
 
-server.listen(PORT, () => {
+server.listen(process.env.PORT, () => {
   connectToMongoDB(process.env.MONGO_DB_URL); // To connect to MongoDB database
-  console.log(`Server started: https://localhost:${PORT}`);
+  console.log(`Server started: ${process.env.PORT}`);
 });
