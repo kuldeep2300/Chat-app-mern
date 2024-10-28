@@ -16,7 +16,8 @@
 
 
 body {
-  background: url("/bg.webp") no-repeat center center;
+  height: 100vh;
+  background-image: url("/bg.webp") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }

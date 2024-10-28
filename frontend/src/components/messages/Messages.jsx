@@ -19,7 +19,7 @@ export const Messages = () => {
   }, [messages]);
 
   return (
-    <div className="sm:w-[60vw] md:w-[70vw] lg:w-[80vw] px-4 flex-1 overflow-auto message-container mt-12 ">
+    <div className="sm:w-[60vw] md:w-[70vw] lg:w-[80vw] px-4 flex-1 overflow-auto message-container mt-16 ">
       {/* Render messages or skeletons based on loading state */}
       {!loading &&
         messages.length > 0 &&
