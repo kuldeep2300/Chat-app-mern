@@ -16,9 +16,10 @@
 
 
 body {
-  height: 100vh;
-  background-image: url("/bg.webp") no-repeat center center;
+  background: url("/bg.webp");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -89,9 +90,6 @@ input:-webkit-autofill {
 
 
 /*! Media Queries  */
-@media (width <= 768px ) {
-
-}
 
 @media (width <= 560px ) {
   .hidden-sidebar {
