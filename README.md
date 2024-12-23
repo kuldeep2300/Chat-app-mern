@@ -1,7 +1,5 @@
 # Chat App MERN (Real-Time Communication)
 
-![Chat App Sticker](https://user-images.githubusercontent.com/your-sticker-url-here/chat-app-sticker.png)
-
 ## 🌟 Overview
 This is a fully responsive **real-time chat application** built using the MERN (MongoDB, Express.js, React, Node.js) stack. The application allows users to engage in instant messaging with smooth real-time updates. It offers an intuitive interface optimized for both mobile and desktop users, ensuring seamless communication across all devices.
 
