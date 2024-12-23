@@ -39,8 +39,7 @@ This is a fully responsive **real-time chat application** built using the MERN (
 ---
 
 ## 🌐 Live Demo
-Check out the live demo [here](#https://chat-app-mern-dh70.onrender.com/login).
-
+Check out the live demo [here](https://chat-app-mern-dh70.onrender.com/login).
 ---
 
 ## 🤝 Contribution
